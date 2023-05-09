@@ -31,13 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard_Form));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.uC_UpdateItems1 = new Cafe_Management_System.User_Controls.UC_UpdateItems();
-            this.uc_plcOrder1 = new Cafe_Management_System.User_Controls.uc_plcOrder();
-            this.uC_AddItems1 = new Cafe_Management_System.User_Controls.UC_AddItems();
-            this.uC_Welcome1 = new Cafe_Management_System.User_Controls.UC_Welcome();
-            this.uc_UserManag1 = new Cafe_Management_System.User_Controls.uc_UserManag();
-            this.uc_rmvItems1 = new Cafe_Management_System.User_Controls.uc_rmvItems();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_username = new System.Windows.Forms.Label();
             this.btn_return = new Guna.UI2.WinForms.Guna2Button();
             this.btn_usrmng = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Logout = new Guna.UI2.WinForms.Guna2Button();
@@ -56,7 +51,12 @@
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse8 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lbl_username = new System.Windows.Forms.Label();
+            this.uC_UpdateItems1 = new Cafe_Management_System.User_Controls.UC_UpdateItems();
+            this.uc_plcOrder1 = new Cafe_Management_System.User_Controls.uc_plcOrder();
+            this.uC_AddItems1 = new Cafe_Management_System.User_Controls.UC_AddItems();
+            this.uC_Welcome1 = new Cafe_Management_System.User_Controls.UC_Welcome();
+            this.uc_UserManag1 = new Cafe_Management_System.User_Controls.uc_UserManag();
+            this.uc_rmvItems1 = new Cafe_Management_System.User_Controls.uc_rmvItems();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close_icon)).BeginInit();
@@ -75,59 +75,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 514);
             this.panel1.TabIndex = 0;
-            // 
-            // uC_UpdateItems1
-            // 
-            this.uC_UpdateItems1.BackColor = System.Drawing.Color.White;
-            this.uC_UpdateItems1.Location = new System.Drawing.Point(3, 0);
-            this.uC_UpdateItems1.Name = "uC_UpdateItems1";
-            this.uC_UpdateItems1.Size = new System.Drawing.Size(781, 514);
-            this.uC_UpdateItems1.TabIndex = 6;
-            // 
-            // uc_plcOrder1
-            // 
-            this.uc_plcOrder1.BackColor = System.Drawing.Color.White;
-            this.uc_plcOrder1.Location = new System.Drawing.Point(0, 3);
-            this.uc_plcOrder1.Name = "uc_plcOrder1";
-            this.uc_plcOrder1.Size = new System.Drawing.Size(781, 514);
-            this.uc_plcOrder1.TabIndex = 5;
-            this.uc_plcOrder1.Load += new System.EventHandler(this.uc_plcOrder1_Load);
-            // 
-            // uC_AddItems1
-            // 
-            this.uC_AddItems1.BackColor = System.Drawing.Color.White;
-            this.uC_AddItems1.Location = new System.Drawing.Point(7, -3);
-            this.uC_AddItems1.Name = "uC_AddItems1";
-            this.uC_AddItems1.Size = new System.Drawing.Size(781, 514);
-            this.uC_AddItems1.TabIndex = 4;
-            // 
-            // uC_Welcome1
-            // 
-            this.uC_Welcome1.BackColor = System.Drawing.Color.White;
-            this.uC_Welcome1.Location = new System.Drawing.Point(-27, 3);
-            this.uC_Welcome1.Name = "uC_Welcome1";
-            this.uC_Welcome1.Size = new System.Drawing.Size(815, 514);
-            this.uC_Welcome1.TabIndex = 0;
-            // 
-            // uc_UserManag1
-            // 
-            this.uc_UserManag1.BackColor = System.Drawing.Color.White;
-            this.uc_UserManag1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(71)))), ((int)(((byte)(9)))));
-            this.uc_UserManag1.IsAddUserButtonVisible = true;
-            this.uc_UserManag1.IsResetUserButtonVisible = true;
-            this.uc_UserManag1.Location = new System.Drawing.Point(3, -3);
-            this.uc_UserManag1.Name = "uc_UserManag1";
-            this.uc_UserManag1.Size = new System.Drawing.Size(781, 514);
-            this.uc_UserManag1.TabIndex = 8;
-            this.uc_UserManag1.Load += new System.EventHandler(this.uc_UserManag1_Load);
-            // 
-            // uc_rmvItems1
-            // 
-            this.uc_rmvItems1.BackColor = System.Drawing.Color.White;
-            this.uc_rmvItems1.Location = new System.Drawing.Point(0, -3);
-            this.uc_rmvItems1.Name = "uc_rmvItems1";
-            this.uc_rmvItems1.Size = new System.Drawing.Size(781, 514);
-            this.uc_rmvItems1.TabIndex = 7;
             // 
             // panel2
             // 
@@ -148,6 +95,19 @@
             this.panel2.TabIndex = 1;
             this.panel2.Click += new System.EventHandler(this.panel2_Click);
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // lbl_username
+            // 
+            this.lbl_username.AutoSize = true;
+            this.lbl_username.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_username.ForeColor = System.Drawing.Color.White;
+            this.lbl_username.Location = new System.Drawing.Point(63, 393);
+            this.lbl_username.Name = "lbl_username";
+            this.lbl_username.Size = new System.Drawing.Size(73, 26);
+            this.lbl_username.TabIndex = 8;
+            this.lbl_username.Text = "(Name)";
+            this.lbl_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_username.Click += new System.EventHandler(this.lbl_username_Click);
             // 
             // btn_return
             // 
@@ -347,16 +307,58 @@
             this.guna2Elipse8.BorderRadius = 30;
             this.guna2Elipse8.TargetControl = this.panel1;
             // 
-            // lbl_username
+            // uC_UpdateItems1
             // 
-            this.lbl_username.AutoSize = true;
-            this.lbl_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_username.ForeColor = System.Drawing.Color.White;
-            this.lbl_username.Location = new System.Drawing.Point(62, 12);
-            this.lbl_username.Name = "lbl_username";
-            this.lbl_username.Size = new System.Drawing.Size(85, 26);
-            this.lbl_username.TabIndex = 8;
-            this.lbl_username.Text = "(Name)";
+            this.uC_UpdateItems1.BackColor = System.Drawing.Color.White;
+            this.uC_UpdateItems1.Location = new System.Drawing.Point(3, 0);
+            this.uC_UpdateItems1.Name = "uC_UpdateItems1";
+            this.uC_UpdateItems1.Size = new System.Drawing.Size(781, 514);
+            this.uC_UpdateItems1.TabIndex = 6;
+            // 
+            // uc_plcOrder1
+            // 
+            this.uc_plcOrder1.BackColor = System.Drawing.Color.White;
+            this.uc_plcOrder1.Location = new System.Drawing.Point(0, 3);
+            this.uc_plcOrder1.Name = "uc_plcOrder1";
+            this.uc_plcOrder1.Size = new System.Drawing.Size(781, 514);
+            this.uc_plcOrder1.TabIndex = 5;
+            this.uc_plcOrder1.Load += new System.EventHandler(this.uc_plcOrder1_Load);
+            // 
+            // uC_AddItems1
+            // 
+            this.uC_AddItems1.BackColor = System.Drawing.Color.White;
+            this.uC_AddItems1.Location = new System.Drawing.Point(7, -3);
+            this.uC_AddItems1.Name = "uC_AddItems1";
+            this.uC_AddItems1.Size = new System.Drawing.Size(781, 514);
+            this.uC_AddItems1.TabIndex = 4;
+            // 
+            // uC_Welcome1
+            // 
+            this.uC_Welcome1.BackColor = System.Drawing.Color.White;
+            this.uC_Welcome1.Location = new System.Drawing.Point(-27, 3);
+            this.uC_Welcome1.Name = "uC_Welcome1";
+            this.uC_Welcome1.Size = new System.Drawing.Size(815, 514);
+            this.uC_Welcome1.TabIndex = 0;
+            // 
+            // uc_UserManag1
+            // 
+            this.uc_UserManag1.BackColor = System.Drawing.Color.White;
+            this.uc_UserManag1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(71)))), ((int)(((byte)(9)))));
+            this.uc_UserManag1.IsAddUserButtonVisible = true;
+            this.uc_UserManag1.IsResetUserButtonVisible = true;
+            this.uc_UserManag1.Location = new System.Drawing.Point(3, -3);
+            this.uc_UserManag1.Name = "uc_UserManag1";
+            this.uc_UserManag1.Size = new System.Drawing.Size(781, 514);
+            this.uc_UserManag1.TabIndex = 8;
+            this.uc_UserManag1.Load += new System.EventHandler(this.uc_UserManag1_Load);
+            // 
+            // uc_rmvItems1
+            // 
+            this.uc_rmvItems1.BackColor = System.Drawing.Color.White;
+            this.uc_rmvItems1.Location = new System.Drawing.Point(0, -3);
+            this.uc_rmvItems1.Name = "uc_rmvItems1";
+            this.uc_rmvItems1.Size = new System.Drawing.Size(781, 514);
+            this.uc_rmvItems1.TabIndex = 7;
             // 
             // Dashboard_Form
             // 

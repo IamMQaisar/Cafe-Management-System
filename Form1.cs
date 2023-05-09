@@ -40,6 +40,7 @@ namespace Cafe_Management_System
 
             {
                 Dashboard_Form ds = new Dashboard_Form("Admin");
+                ds.changeLable(Username);
                 ds.Show();
                 this.Hide();
 
@@ -47,6 +48,7 @@ namespace Cafe_Management_System
             else if (txtbx_usrnm.Text == "guest" && txtbx_pswd.Text == "123")
             {
                 Dashboard_Form ds = new Dashboard_Form("Guest");
+                ds.changeLable("guest");
                 ds.Show();
                 this.Hide();
             }
@@ -79,6 +81,7 @@ namespace Cafe_Management_System
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Dashboard_Form ds = new Dashboard_Form("Guest");
+            ds.changeLable("guest");
             ds.Show();
             this.Hide();
         }
@@ -122,6 +125,7 @@ namespace Cafe_Management_System
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Dashboard_Form ds = new Dashboard_Form("reset");
+            ds.changeLable("reset");
             ds.Show();
             this.Hide();
         }

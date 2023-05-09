@@ -19,6 +19,14 @@ namespace Cafe_Management_System
             InitializeComponent();
         }
 
+        public void changeLable(string user) { 
+            if (user=="guest")
+                lbl_username.Text = "Guest Menu";
+           else if(user=="reset")
+                lbl_username.Text = "Reset Menu";
+            else
+                lbl_username.Text = user;
+        }
         public bool IsGuestUser { get; set; }
 
         public bool IsAdminUser { get; set; }
@@ -213,6 +221,11 @@ namespace Cafe_Management_System
         private void btn_return_Click(object sender, EventArgs e)
         {
             btn_logoutfn("run");
+        }
+
+        private void lbl_username_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
