@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -42,6 +43,12 @@ namespace Cafe_Management_System.User_Controls
                 guna2DataGridView1.Rows[n].Cells[3].Value = txtbx_total.Text;
                 total += Int32.Parse(txtbx_total.Text);
                 lbl_totalRs.Text ="Rs." + total.ToString();
+                txtNumUPDwn_quantity.ResetText();
+                txtNumUPDwn_quantity.Value = 0;
+                txtNumUPDwn_quantity.Minimum = 0;
+                txtbx_total.Clear();
+                txtbx_itemname.Clear();
+                txtbx_price.Clear();
             }
 
         }
@@ -74,6 +81,8 @@ namespace Cafe_Management_System.User_Controls
         private void lstbx_items_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtNumUPDwn_quantity.ResetText();
+            txtNumUPDwn_quantity.Value = 0;
+            txtNumUPDwn_quantity.Minimum = 0;
             txtbx_total.Clear();
 
             string text = lstbx_items.GetItemText(lstbx_items.SelectedItem);
