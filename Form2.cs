@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 using System.Windows.Forms;
 
 namespace Cafe_Management_System
@@ -17,6 +18,11 @@ namespace Cafe_Management_System
         {
             InitializeComponent();
         }
+
+        public bool IsGuestUser { get; set; }
+
+        public bool IsAdminUser { get; set; }
+
 
         string User;
         public Dashboard_Form(string user)
@@ -46,9 +52,15 @@ namespace Cafe_Management_System
                 btn_rmvItem.Enabled = false;
                 btn_UpdateItem.Hide();
                 btn_UpdateItem.Enabled = false;
+                uc_UserManag1.IsAddUserButtonVisible = IsGuestUser;
 
 
 
+
+            }
+            else
+            {
+                uc_UserManag1.IsResetUserButtonVisible = IsAdminUser;
             }
 
         }

@@ -15,15 +15,52 @@ namespace Cafe_Management_System.User_Controls
     {
         function fn = new function();
         Login_form lf = new Login_form();
+      
+
         string query;
         public uc_UserManag()
         {
             InitializeComponent();
         }
 
+        public bool IsAddUserButtonVisible
+        {
+            get { return btn_addUser.Visible; }
+            set
+            { 
+                btn_addUser.Visible = value; 
+                chckbx_agrmnt.Visible = value;
+                btn_addUser.Enabled = value;
+                chckbx_agrmnt.Enabled = value;
+                cmbox_secQ.Enabled = value;
+            }
+
+        }
+
+        public bool IsResetUserButtonVisible
+
+        {
+            get { return btn_reset.Visible; }
+            set
+            {
+                btn_reset.Visible = value;
+                btn_reset.Enabled = value;
+            }
+        }
+
+        private void clearAll() {
+            txtbx_fullName.Clear();
+            txtbx_username.Clear();
+            txtbx_CNIC.Clear();
+            txtbx_password.Clear();
+            txtbx_repassword.Clear();
+            cmbox_secQ.Text = "";
+            txtbx_secA.Clear();
+        }
+
         private void Reset_pswd()
         {
-            query = "select * from users where username='" + txtbx_username.Text + "';";
+            query = "select * from users where username='"+txtbx_username.Text+"';";
             SqlCommand command = fn.getInstance();
             command.CommandText = query;
             SqlDataReader reader = command.ExecuteReader();
@@ -35,21 +72,12 @@ namespace Cafe_Management_System.User_Controls
             reader.Close();
             if (txtbx_username.Text == Username && txtbx_username.Text != "")
             {
-                if (!string.IsNullOrWhiteSpace(txtbx_fullName.Text))
-                {
-                    query = "update users set Fullname='"+txtbx_fullName.Text+"', password='" + txtbx_repassword.Text + "' where username='" + txtbx_username.Text + "';";
-                }
-                else
-                {
-                    query = "update users set password='" + txtbx_repassword.Text + "' where username='" + txtbx_username.Text + "';";
 
-                 }
+                query = "UPDATE users SET Fullname='" + txtbx_fullName.Text + "', username='" + txtbx_username.Text + "', password='" + txtbx_repassword.Text + "', CNIC='" + txtbx_CNIC.Text + "' where  sec_A='" + txtbx_secA.Text + "';"; //
                 fn.setData(query);
                 MessageBox.Show("Password Reset Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtbx_fullName.Clear();
-                txtbx_password.Clear();
-                txtbx_username.Clear();
-                txtbx_repassword.Clear();
+                clearAll();
+
 
                 Form parentForm = this.ParentForm;
                 parentForm.Close();
@@ -63,12 +91,8 @@ namespace Cafe_Management_System.User_Controls
             }
             else
             {
-                MessageBox.Show("Invalid Username or password!");
-                txtbx_fullName.Clear();
-                txtbx_username.Clear();
-                txtbx_password.Clear();
-                txtbx_repassword.Clear();
-                txtbx_username.Focus();
+                MessageBox.Show("Invalid Security Question or Answer!");
+                clearAll();
             }
             command.Dispose();
             fn.closeInstance();
@@ -82,7 +106,7 @@ namespace Cafe_Management_System.User_Controls
 
         private void btn_addUser_Click(object sender, EventArgs e)
         {
-            if(txtbx_username.Text == "" || txtbx_fullName.Text == "" || txtbx_password.Text=="" || txtbx_repassword.Text=="" )
+            if (txtbx_username.Text == "" || txtbx_fullName.Text == "" || txtbx_password.Text == "" || txtbx_repassword.Text == "")
             {
                 MessageBox.Show("Fill all mandatory fields, if any is empty.");
             }
@@ -98,15 +122,20 @@ namespace Cafe_Management_System.User_Controls
             {
                 MessageBox.Show("Please Agree to the terms and condtitions.");
             }
-            else if (txtbx_username.Text != "" && txtbx_fullName.Text != "" && txtbx_password.Text.Length >= 8 && txtbx_password.Text == txtbx_repassword.Text && chckbx_agrmnt.Checked)
+            else if (cmbox_secQ.Text=="") { 
+                MessageBox.Show("Please select a Security Question.");
+
+            }
+            else if (txtbx_secA.Text=="")
             {
-                string query = "INSERT INTO users (Fullname, username, password) VALUES (" + "'" + txtbx_fullName.Text + "', '" + txtbx_username.Text + "', '" + txtbx_repassword.Text + "')";
+                MessageBox.Show("Please enter the Security Answer.");
+            }
+            else if (txtbx_username.Text != "" && txtbx_fullName.Text != "" && txtbx_CNIC.Text.Length == 13 && txtbx_password.Text.Length >= 8 && txtbx_password.Text == txtbx_repassword.Text && chckbx_agrmnt.Checked && cmbox_secQ.Text!="" && txtbx_secA.Text!="")
+            {
+                string query = "INSERT INTO users (Fullname, username, CNIC, password, sec_Q, sec_A) VALUES ('" + txtbx_fullName.Text + "','" + txtbx_username.Text + "','" + txtbx_CNIC.Text + "','" + txtbx_password.Text + "','" + cmbox_secQ.Text + "','" + txtbx_secA.Text + "')";// " + "'" + txtbx_fullName.Text + "', '" + txtbx_username.Text + "', '" + txtbx_CNIC.Text + "', '" + txtbx_repassword.Text + "')";
                 fn.setData(query);
                 MessageBox.Show("You have registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtbx_fullName.Clear();
-                txtbx_password.Clear();
-                txtbx_username.Clear();
-                txtbx_repassword.Clear();
+                clearAll();
                 Form parentForm = this.ParentForm;
                 parentForm.Close();
                 lf.Show();
@@ -133,7 +162,12 @@ namespace Cafe_Management_System.User_Controls
             {
                 MessageBox.Show("Password doesn't match");
             }
-            else if (txtbx_username.Text != "" && txtbx_password.Text.Length >= 8 && txtbx_password.Text == txtbx_repassword.Text)
+            
+            else if (string.IsNullOrWhiteSpace(txtbx_secA.Text))
+            {
+                MessageBox.Show("Please enter the Security Answer.");
+            }
+            else if (txtbx_username.Text != "" && txtbx_CNIC.Text.Length == 13 && txtbx_password.Text.Length >= 8 && txtbx_password.Text == txtbx_repassword.Text && !string.IsNullOrWhiteSpace(txtbx_secA.Text))
             {
                 Reset_pswd();
 
