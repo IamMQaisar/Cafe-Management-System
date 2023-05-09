@@ -18,7 +18,10 @@ namespace Cafe_Management_System.User_Controls
         }
         private void uc_plcOrder_Load(object sender, EventArgs e)
         {
-
+            if (txtbx_itemname.Text == "" || txtbx_price.Text == "")
+            {
+                txtNumUPDwn_quantity.Enabled = false;
+            }
         }
 
         protected int n, total = 0;
@@ -168,6 +171,16 @@ namespace Cafe_Management_System.User_Controls
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtbx_itemname_TextChanged(object sender, EventArgs e)
+        {
+            if (txtbx_itemname.Text == "" || txtbx_price.Text=="")
+            {
+                txtNumUPDwn_quantity.Enabled = false;
+            }
+            else
+            txtNumUPDwn_quantity.Enabled = true;
         }
 
         private void txtNumUPDwn_quantity_ValueChanged(object sender, EventArgs e)

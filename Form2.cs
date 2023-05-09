@@ -25,7 +25,7 @@ namespace Cafe_Management_System
            else if(user=="reset")
                 lbl_username.Text = "Reset Menu";
             else
-                lbl_username.Text = user;
+                lbl_username.Text = "user:"+ user;
         }
         public bool IsGuestUser { get; set; }
 
