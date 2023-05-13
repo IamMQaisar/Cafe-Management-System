@@ -19,13 +19,28 @@ namespace Cafe_Management_System
             InitializeComponent();
         }
 
-        public void changeLable(string user) { 
-            if (user=="guest")
-                lbl_username.Text = "Guest Menu";
-           else if(user=="reset")
+        string admin;
+        public void changeLable(string user) {
+            if (user == "guest") { 
+                lbl_username.Text = "Guest";
+            lbl_sadmin.Hide(); }
+            else if (user == "reset")
+            {
                 lbl_username.Text = "Reset Menu";
+                lbl_usertxt.Hide();
+                lbl_sadmin.Hide();
+            }
             else
-                lbl_username.Text = "user:"+ user;
+            { if (user == "MQaisar")
+                {
+                    admin = "[Super Admin]";
+                    lbl_sadmin.Text = admin;
+                }
+                else
+                {  admin = "[Admin]";
+                lbl_sadmin.Text = admin; }
+                lbl_username.Text = user;
+            }
         }
         public bool IsGuestUser { get; set; }
 

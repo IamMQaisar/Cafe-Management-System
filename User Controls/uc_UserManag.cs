@@ -98,6 +98,42 @@ namespace Cafe_Management_System.User_Controls
             fn.closeInstance();
         }
 
+        private void Del_User()
+        {
+            query = "select * from users where username='" + txtbx_username.Text + "';";
+            SqlCommand command = fn.getInstance();
+            command.CommandText = query;
+            SqlDataReader reader = command.ExecuteReader();
+            string Username = "";
+            while (reader.Read())
+            {
+                Username = reader["Username"].ToString();
+            }
+            reader.Close();
+            if (txtbx_username.Text == Username && txtbx_username.Text != "")
+            {
+
+                query = "Delete users where username='" + txtbx_username.Text +"';";
+                if (MessageBox.Show("Are you sure you want to delete this user?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+
+                    fn.setData(query);
+                }
+                MessageBox.Show("User Deleted Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearAll();
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid Security Question or Answer!");
+                clearAll();
+            }
+            command.Dispose();
+            fn.closeInstance();
+        }
+
         private void lbl_rmvItems_Click(object sender, EventArgs e)
         {
 
@@ -222,6 +258,22 @@ namespace Cafe_Management_System.User_Controls
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_delUser_Click(object sender, EventArgs e)
+        {
+            
+            if (!string.IsNullOrEmpty(txtbx_username.Text))
+                MessageBox.Show("Provide Uaername to Proceed");
+            
+            else 
+                Del_User();
 
         }
     }

@@ -51,6 +51,8 @@
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse8 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lbl_usertxt = new System.Windows.Forms.Label();
+            this.lbl_sadmin = new System.Windows.Forms.Label();
             this.uC_Welcome1 = new Cafe_Management_System.User_Controls.UC_Welcome();
             this.uc_UserManag1 = new Cafe_Management_System.User_Controls.uc_UserManag();
             this.uc_rmvItems1 = new Cafe_Management_System.User_Controls.uc_rmvItems();
@@ -79,6 +81,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(71)))), ((int)(((byte)(9)))));
+            this.panel2.Controls.Add(this.lbl_sadmin);
+            this.panel2.Controls.Add(this.lbl_usertxt);
             this.panel2.Controls.Add(this.lbl_username);
             this.panel2.Controls.Add(this.btn_return);
             this.panel2.Controls.Add(this.btn_usrmng);
@@ -99,11 +103,11 @@
             // lbl_username
             // 
             this.lbl_username.AutoSize = true;
-            this.lbl_username.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_username.Font = new System.Drawing.Font("Dubai", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_username.ForeColor = System.Drawing.Color.White;
-            this.lbl_username.Location = new System.Drawing.Point(36, 391);
+            this.lbl_username.Location = new System.Drawing.Point(39, 400);
             this.lbl_username.Name = "lbl_username";
-            this.lbl_username.Size = new System.Drawing.Size(73, 26);
+            this.lbl_username.Size = new System.Drawing.Size(76, 34);
             this.lbl_username.TabIndex = 8;
             this.lbl_username.Text = "(Name)";
             this.lbl_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -307,6 +311,30 @@
             this.guna2Elipse8.BorderRadius = 30;
             this.guna2Elipse8.TargetControl = this.panel1;
             // 
+            // lbl_usertxt
+            // 
+            this.lbl_usertxt.AutoSize = true;
+            this.lbl_usertxt.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usertxt.ForeColor = System.Drawing.Color.White;
+            this.lbl_usertxt.Location = new System.Drawing.Point(12, 373);
+            this.lbl_usertxt.Name = "lbl_usertxt";
+            this.lbl_usertxt.Size = new System.Drawing.Size(58, 26);
+            this.lbl_usertxt.TabIndex = 9;
+            this.lbl_usertxt.Text = "User:";
+            this.lbl_usertxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_sadmin
+            // 
+            this.lbl_sadmin.AutoSize = true;
+            this.lbl_sadmin.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_sadmin.ForeColor = System.Drawing.Color.White;
+            this.lbl_sadmin.Location = new System.Drawing.Point(63, 374);
+            this.lbl_sadmin.Name = "lbl_sadmin";
+            this.lbl_sadmin.Size = new System.Drawing.Size(80, 26);
+            this.lbl_sadmin.TabIndex = 10;
+            this.lbl_sadmin.Text = "S.Admin";
+            this.lbl_sadmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // uC_Welcome1
             // 
             this.uC_Welcome1.BackColor = System.Drawing.Color.White;
@@ -319,8 +347,7 @@
             // 
             this.uc_UserManag1.BackColor = System.Drawing.Color.White;
             this.uc_UserManag1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(71)))), ((int)(((byte)(9)))));
-            this.uc_UserManag1.IsAddUserButtonVisible = true;
-            this.uc_UserManag1.IsResetUserButtonVisible = true;
+          
             this.uc_UserManag1.Location = new System.Drawing.Point(3, -3);
             this.uc_UserManag1.Name = "uc_UserManag1";
             this.uc_UserManag1.Size = new System.Drawing.Size(781, 514);
@@ -411,5 +438,7 @@
         private User_Controls.uc_UserManag uc_UserManag1;
         private Guna.UI2.WinForms.Guna2Button btn_return;
         private System.Windows.Forms.Label lbl_username;
+        private System.Windows.Forms.Label lbl_usertxt;
+        private System.Windows.Forms.Label lbl_sadmin;
     }
 }

@@ -23,6 +23,27 @@ namespace Cafe_Management_System.User_Controls
                 txtNumUPDwn_quantity.Enabled = false;
             }
         }
+        
+        private void clearAll()
+        {
+
+            txtNumUPDwn_quantity.ResetText();
+            txtNumUPDwn_quantity.Value = 0;
+            txtNumUPDwn_quantity.Minimum = 0;
+            txtbx_total.Clear();
+            txtbx_itemname.Clear();
+            txtbx_price.Clear();
+
+        }
+        private void clearAll(string partial)
+        {
+
+            txtNumUPDwn_quantity.ResetText();
+            txtNumUPDwn_quantity.Value = 0;
+            txtNumUPDwn_quantity.Minimum = 0;
+            txtbx_total.Clear();
+            
+        }
 
         protected int n, total = 0;
         private void btn_addtoCart_Click(object sender, EventArgs e)
@@ -46,12 +67,9 @@ namespace Cafe_Management_System.User_Controls
                 guna2DataGridView1.Rows[n].Cells[3].Value = txtbx_total.Text;
                 total += Int32.Parse(txtbx_total.Text);
                 lbl_totalRs.Text ="Rs." + total.ToString();
-                txtNumUPDwn_quantity.ResetText();
-                txtNumUPDwn_quantity.Value = 0;
-                txtNumUPDwn_quantity.Minimum = 0;
-                txtbx_total.Clear();
-                txtbx_itemname.Clear();
-                txtbx_price.Clear();
+                clearAll();
+                txtNumUPDwn_quantity.Enabled = false;
+
             }
 
         }
@@ -83,10 +101,8 @@ namespace Cafe_Management_System.User_Controls
 
         private void lstbx_items_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtNumUPDwn_quantity.ResetText();
-            txtNumUPDwn_quantity.Value = 0;
-            txtNumUPDwn_quantity.Minimum = 0;
-            txtbx_total.Clear();
+
+            clearAll("partial");
 
             string text = lstbx_items.GetItemText(lstbx_items.SelectedItem);
             txtbx_itemname.Text = text;
@@ -118,7 +134,7 @@ namespace Cafe_Management_System.User_Controls
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Select any Item Row.");
             }
@@ -175,12 +191,23 @@ namespace Cafe_Management_System.User_Controls
 
         private void txtbx_itemname_TextChanged(object sender, EventArgs e)
         {
-            if (txtbx_itemname.Text == "" || txtbx_price.Text=="")
+            try
             {
-                txtNumUPDwn_quantity.Enabled = false;
+                if (!string.IsNullOrEmpty(txtbx_itemname.Text) || !string.IsNullOrEmpty(txtbx_price.Text))
+                {
+                    txtNumUPDwn_quantity.Enabled = true;
+                }
+                else
+                {
+                    txtNumUPDwn_quantity.Enabled = false;
+                }
             }
-            else
-            txtNumUPDwn_quantity.Enabled = true;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
         private void txtNumUPDwn_quantity_ValueChanged(object sender, EventArgs e)

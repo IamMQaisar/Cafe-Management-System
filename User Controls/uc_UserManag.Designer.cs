@@ -48,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtbx_secA = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbox_secQ = new System.Windows.Forms.ComboBox();
+            this.btn_delUser = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label4
@@ -346,11 +347,31 @@
             this.cmbox_secQ.Size = new System.Drawing.Size(273, 28);
             this.cmbox_secQ.TabIndex = 6;
             // 
+            // btn_delUser
+            // 
+            this.btn_delUser.BorderRadius = 15;
+            this.btn_delUser.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btn_delUser.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(221)))));
+            this.btn_delUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_delUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_delUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_delUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_delUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_delUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_delUser.ForeColor = System.Drawing.Color.White;
+            this.btn_delUser.Location = new System.Drawing.Point(24, 435);
+            this.btn_delUser.Name = "btn_delUser";
+            this.btn_delUser.Size = new System.Drawing.Size(152, 47);
+            this.btn_delUser.TabIndex = 48;
+            this.btn_delUser.Text = "Delete";
+            this.btn_delUser.Click += new System.EventHandler(this.btn_delUser_Click);
+            // 
             // uc_UserManag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btn_delUser);
             this.Controls.Add(this.cmbox_secQ);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtbx_secA);
@@ -359,8 +380,6 @@
             this.Controls.Add(this.chckbx_agrmnt);
             this.Controls.Add(this.lbl_rpswd);
             this.Controls.Add(this.txtbx_repassword);
-            this.Controls.Add(this.btn_reset);
-            this.Controls.Add(this.btn_addUser);
             this.Controls.Add(this.lbl_pswd);
             this.Controls.Add(this.txtbx_password);
             this.Controls.Add(this.label1);
@@ -368,6 +387,8 @@
             this.Controls.Add(this.lbl_rmvItems);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtbx_fullName);
+            this.Controls.Add(this.btn_reset);
+            this.Controls.Add(this.btn_addUser);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(71)))), ((int)(((byte)(9)))));
             this.Name = "uc_UserManag";
             this.Size = new System.Drawing.Size(781, 514);
@@ -398,5 +419,6 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtbx_secA;
         private System.Windows.Forms.ComboBox cmbox_secQ;
+        private Guna.UI2.WinForms.Guna2Button btn_delUser;
     }
 }
