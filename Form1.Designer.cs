@@ -114,7 +114,7 @@
             this.btn_login.Location = new System.Drawing.Point(116, 436);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(152, 47);
-            this.btn_login.TabIndex = 3;
+            this.btn_login.TabIndex = 4;
             this.btn_login.Text = "Login";
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             this.btn_login.MouseLeave += new System.EventHandler(this.btn_login_MouseLeave);
@@ -144,7 +144,7 @@
             this.showpass_checkbox.Location = new System.Drawing.Point(178, 396);
             this.showpass_checkbox.Name = "showpass_checkbox";
             this.showpass_checkbox.Size = new System.Drawing.Size(148, 24);
-            this.showpass_checkbox.TabIndex = 4;
+            this.showpass_checkbox.TabIndex = 3;
             this.showpass_checkbox.Text = "Show Password";
             this.showpass_checkbox.UseVisualStyleBackColor = true;
             this.showpass_checkbox.CheckedChanged += new System.EventHandler(this.showpass_checkbox_CheckedChanged);

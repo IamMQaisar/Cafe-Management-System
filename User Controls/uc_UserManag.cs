@@ -32,6 +32,7 @@ namespace Cafe_Management_System.User_Controls
             {
 
                 btn_addUser.Show();
+                btn_addUser.BringToFront();
                 btn_addUser.Visible = true; 
                 chckbx_agrmnt.Visible = true;
                 btn_addUser.Enabled = true;
@@ -53,7 +54,9 @@ namespace Cafe_Management_System.User_Controls
                 btn_delUser.Visible = true;
                 btn_delUser.Enabled = true;
                 btn_addUser.Show();
+                btn_addUser.BringToFront();
                 btn_addUser.Visible = true;
+
                 chckbx_agrmnt.Visible = true;
                 btn_addUser.Enabled = true;
                 chckbx_agrmnt.Enabled = true;
@@ -68,6 +71,7 @@ namespace Cafe_Management_System.User_Controls
             get { return btn_reset.Visible; }
             set
             {
+                btn_reset.BringToFront();
                 btn_reset.Visible = true;
                 btn_reset.Enabled = true;
                 btn_delUser.Visible = false;

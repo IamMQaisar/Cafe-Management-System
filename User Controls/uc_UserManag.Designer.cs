@@ -74,7 +74,7 @@
             this.chckbx_agrmnt.Location = new System.Drawing.Point(259, 448);
             this.chckbx_agrmnt.Name = "chckbx_agrmnt";
             this.chckbx_agrmnt.Size = new System.Drawing.Size(284, 24);
-            this.chckbx_agrmnt.TabIndex = 8;
+            this.chckbx_agrmnt.TabIndex = 9;
             this.chckbx_agrmnt.Text = "I agree to the Terms and Condition.";
             this.chckbx_agrmnt.UseVisualStyleBackColor = true;
             // 
@@ -339,8 +339,8 @@
             this.cmbox_secQ.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbox_secQ.FormattingEnabled = true;
             this.cmbox_secQ.Items.AddRange(new object[] {
-            "What is your mother\'s maiden name",
             "What is the name of your first pet",
+            "What is your maiden name",
             "What is the name of your birth city",
             "What is your favorite book or movie",
             "What is your favorite food or drink"});
@@ -364,7 +364,7 @@
             this.btn_delUser.Location = new System.Drawing.Point(45, 435);
             this.btn_delUser.Name = "btn_delUser";
             this.btn_delUser.Size = new System.Drawing.Size(152, 47);
-            this.btn_delUser.TabIndex = 48;
+            this.btn_delUser.TabIndex = 11;
             this.btn_delUser.Text = "Delete";
             this.btn_delUser.Click += new System.EventHandler(this.btn_delUser_Click);
             // 
@@ -375,7 +375,7 @@
             this.showpass_checkbox.Location = new System.Drawing.Point(355, 418);
             this.showpass_checkbox.Name = "showpass_checkbox";
             this.showpass_checkbox.Size = new System.Drawing.Size(176, 24);
-            this.showpass_checkbox.TabIndex = 49;
+            this.showpass_checkbox.TabIndex = 8;
             this.showpass_checkbox.Text = "Show Hidden Fields";
             this.showpass_checkbox.UseVisualStyleBackColor = true;
             this.showpass_checkbox.CheckedChanged += new System.EventHandler(this.showpass_checkbox_CheckedChanged);
@@ -402,8 +402,8 @@
             this.Controls.Add(this.lbl_rmvItems);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtbx_fullName);
-            this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_addUser);
+            this.Controls.Add(this.btn_reset);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(71)))), ((int)(((byte)(9)))));
             this.Name = "uc_UserManag";
             this.Size = new System.Drawing.Size(781, 514);
