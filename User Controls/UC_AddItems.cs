@@ -42,5 +42,10 @@ namespace Cafe_Management_System.User_Controls
         {
 
         }
+
+        private void cmbx_category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -7,3 +7,15 @@ CREATE TABLE users (
     sec_Q VARCHAR(50) NOT NULL,
     sec_A VARCHAR(50) NOT NULL
 );
+
+
+create table users(
+ID INT NOT NULL IDENTITY (1, 1) PRIMARY KEY,
+    FullName NVARCHAR(100) NOT NULL,
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    CNIC CHAR(13) NOT NULL,
+    Password NVARCHAR(128) NOT NULL,
+    Salt NVARCHAR(256) NOT NULL,
+sec_Q varchar(50) not null,
+sec_A varchar(50) not null
+)

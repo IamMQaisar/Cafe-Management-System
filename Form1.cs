@@ -5,6 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,20 +25,37 @@ namespace Cafe_Management_System
         private void btn_login_Click(object sender, EventArgs e)
 
         {
+
             query = "select * from users where username='" + txtbx_usrnm.Text + "';";
             SqlCommand command = fn.getInstance();
             command.CommandText = query;
             SqlDataReader reader = command.ExecuteReader();
             string Username = "";
             string Password = "";
+            string Salt = "";
             while (reader.Read())
             {
                 Username = reader["username"].ToString();
                 Password = reader["password"].ToString();
+                Salt = reader["salt"].ToString();
             }
             reader.Close();
 
-            if(txtbx_usrnm.Text == Username && txtbx_pswd.Text == Password && txtbx_usrnm.Text!="" && txtbx_pswd.Text!="")
+            string password = txtbx_pswd.Text;
+            
+
+            string salt = Salt;
+            byte[] passwordBytes = Encoding.UTF8.GetBytes(password + salt);
+            byte[] hashBytes;
+
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                hashBytes = sha256.ComputeHash(passwordBytes);
+            }
+
+            string hashedPassword = Convert.ToBase64String(hashBytes);
+
+            if (txtbx_usrnm.Text == Username && hashedPassword == Password && txtbx_usrnm.Text!="" && txtbx_pswd.Text!="")
 
             {
                 Dashboard_Form ds = new Dashboard_Form(Username);

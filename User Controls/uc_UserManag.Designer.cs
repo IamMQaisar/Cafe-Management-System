@@ -253,9 +253,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(71)))), ((int)(((byte)(9)))));
             this.label9.Location = new System.Drawing.Point(84, 85);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 33);
+            this.label9.Size = new System.Drawing.Size(138, 33);
             this.label9.TabIndex = 35;
-            this.label9.Text = "Full Name";
+            this.label9.Text = "Full Name*";
             // 
             // lbl_rmvItems
             // 
@@ -359,7 +359,7 @@
             this.btn_delUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_delUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btn_delUser.ForeColor = System.Drawing.Color.White;
-            this.btn_delUser.Location = new System.Drawing.Point(24, 435);
+            this.btn_delUser.Location = new System.Drawing.Point(45, 435);
             this.btn_delUser.Name = "btn_delUser";
             this.btn_delUser.Size = new System.Drawing.Size(152, 47);
             this.btn_delUser.TabIndex = 48;

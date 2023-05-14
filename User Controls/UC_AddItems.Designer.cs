@@ -160,12 +160,14 @@
             "Soft Drink",
             "Chinese",
             "Tea",
-            "Coffee"});
+            "Coffee",
+            "Fast Food"});
             this.cmbx_category.Location = new System.Drawing.Point(170, 159);
             this.cmbx_category.Name = "cmbx_category";
             this.cmbx_category.Size = new System.Drawing.Size(438, 36);
             this.cmbx_category.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cmbx_category.TabIndex = 1;
+            this.cmbx_category.SelectedIndexChanged += new System.EventHandler(this.cmbx_category_SelectedIndexChanged);
             // 
             // guna2Elipse1
             // 
