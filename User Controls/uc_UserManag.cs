@@ -72,6 +72,9 @@ namespace Cafe_Management_System.User_Controls
                 btn_reset.Enabled = true;
                 btn_delUser.Visible = false;
                 btn_delUser.Enabled = false;
+                cmbox_secQ.Enabled = false;
+                chckbx_agrmnt.Visible = false;
+                chckbx_agrmnt.Enabled = false;
             }
         }
 
@@ -292,28 +295,12 @@ namespace Cafe_Management_System.User_Controls
 
         private void txtbx_password_TextChanged(object sender, EventArgs e)
         {
-            if (txtbx_password.Text != "")
-            {
-                txtbx_password.BackColor = Color.AliceBlue;
-                txtbx_password.UseSystemPasswordChar = true;
-            }
-            else
-            {
-                txtbx_password.BackColor = Color.White;
-            }
+           
         }
 
         private void txtbx_repassword_TextChanged(object sender, EventArgs e)
         {
-            if (txtbx_repassword.Text != "")
-            {
-                txtbx_repassword.BackColor = Color.AliceBlue;
-                txtbx_repassword.UseSystemPasswordChar = true;
-            }
-            else
-            {
-                txtbx_repassword.BackColor = Color.White;
-            }
+           
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
@@ -336,5 +323,26 @@ namespace Cafe_Management_System.User_Controls
                 Del_User();
 
         }
+
+        private void txtbx_password_TextChanged_1(object sender, EventArgs e)
+        {
+        }
+        private void showpass_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showpass_checkbox.Checked)
+            {
+                txtbx_secA.PasswordChar = '\0';
+                txtbx_repassword.PasswordChar = '\0';
+                txtbx_password.PasswordChar = '\0';
+            }
+            else
+            {
+                txtbx_secA.PasswordChar = '*';
+                txtbx_repassword.PasswordChar = '*';
+                txtbx_password.PasswordChar = '*';
+            }
+        }
+
+       
     }
 }

@@ -49,6 +49,7 @@
             this.txtbx_secA = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbox_secQ = new System.Windows.Forms.ComboBox();
             this.btn_delUser = new Guna.UI2.WinForms.Guna2Button();
+            this.showpass_checkbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label4
@@ -97,13 +98,13 @@
             this.txtbx_repassword.Location = new System.Drawing.Point(258, 313);
             this.txtbx_repassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbx_repassword.Name = "txtbx_repassword";
-            this.txtbx_repassword.PasswordChar = '\0';
+            this.txtbx_repassword.PasswordChar = '*';
             this.txtbx_repassword.PlaceholderText = "Confirm your Password";
             this.txtbx_repassword.SelectedText = "";
             this.txtbx_repassword.Size = new System.Drawing.Size(462, 33);
             this.txtbx_repassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtbx_repassword.TabIndex = 5;
-            this.txtbx_repassword.TextChanged += new System.EventHandler(this.txtbx_repassword_TextChanged);
+            this.txtbx_repassword.TextChanged += new System.EventHandler(this.txtbx_password_TextChanged_1);
             // 
             // lbl_rpswd
             // 
@@ -170,13 +171,13 @@
             this.txtbx_password.Location = new System.Drawing.Point(258, 257);
             this.txtbx_password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbx_password.Name = "txtbx_password";
-            this.txtbx_password.PasswordChar = '\0';
+            this.txtbx_password.PasswordChar = '*';
             this.txtbx_password.PlaceholderText = "Type your Password";
             this.txtbx_password.SelectedText = "";
             this.txtbx_password.Size = new System.Drawing.Size(462, 33);
             this.txtbx_password.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtbx_password.TabIndex = 4;
-            this.txtbx_password.TextChanged += new System.EventHandler(this.txtbx_password_TextChanged);
+            this.txtbx_password.TextChanged += new System.EventHandler(this.txtbx_password_TextChanged_1);
             // 
             // lbl_pswd
             // 
@@ -317,12 +318,13 @@
             this.txtbx_secA.Location = new System.Drawing.Point(538, 369);
             this.txtbx_secA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbx_secA.Name = "txtbx_secA";
-            this.txtbx_secA.PasswordChar = '\0';
+            this.txtbx_secA.PasswordChar = '*';
             this.txtbx_secA.PlaceholderText = "Type Answer";
             this.txtbx_secA.SelectedText = "";
             this.txtbx_secA.Size = new System.Drawing.Size(188, 33);
             this.txtbx_secA.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtbx_secA.TabIndex = 7;
+            this.txtbx_secA.TextChanged += new System.EventHandler(this.txtbx_password_TextChanged_1);
             // 
             // cmbox_secQ
             // 
@@ -366,11 +368,24 @@
             this.btn_delUser.Text = "Delete";
             this.btn_delUser.Click += new System.EventHandler(this.btn_delUser_Click);
             // 
+            // showpass_checkbox
+            // 
+            this.showpass_checkbox.AutoSize = true;
+            this.showpass_checkbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(71)))), ((int)(((byte)(9)))));
+            this.showpass_checkbox.Location = new System.Drawing.Point(355, 418);
+            this.showpass_checkbox.Name = "showpass_checkbox";
+            this.showpass_checkbox.Size = new System.Drawing.Size(176, 24);
+            this.showpass_checkbox.TabIndex = 49;
+            this.showpass_checkbox.Text = "Show Hidden Fields";
+            this.showpass_checkbox.UseVisualStyleBackColor = true;
+            this.showpass_checkbox.CheckedChanged += new System.EventHandler(this.showpass_checkbox_CheckedChanged);
+            // 
             // uc_UserManag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.showpass_checkbox);
             this.Controls.Add(this.btn_delUser);
             this.Controls.Add(this.cmbox_secQ);
             this.Controls.Add(this.label5);
@@ -420,5 +435,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtbx_secA;
         private System.Windows.Forms.ComboBox cmbox_secQ;
         private Guna.UI2.WinForms.Guna2Button btn_delUser;
+        private System.Windows.Forms.CheckBox showpass_checkbox;
     }
 }
