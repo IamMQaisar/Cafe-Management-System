@@ -27,24 +27,49 @@ namespace Cafe_Management_System.User_Controls
         {
             get { return btn_addUser.Visible; }
             set
-            { 
-                btn_addUser.Visible = value; 
-                chckbx_agrmnt.Visible = value;
-                btn_addUser.Enabled = value;
-                chckbx_agrmnt.Enabled = value;
-                cmbox_secQ.Enabled = value;
+            {
+
+                btn_addUser.Show();
+                btn_addUser.Visible = true; 
+                chckbx_agrmnt.Visible = true;
+                btn_addUser.Enabled = true;
+                chckbx_agrmnt.Enabled = true;
+                cmbox_secQ.Enabled = true;
+                btn_reset.Visible = false;
+                btn_reset.Enabled = false;
+                btn_delUser.Visible = false;
+                btn_delUser.Enabled = false;
             }
 
         }
 
+        public bool IsDelUserButtonVisible
+        {
+            get { return btn_delUser.Visible; }
+            set
+            {
+                btn_delUser.Visible = true;
+                btn_delUser.Enabled = true;
+                btn_addUser.Show();
+                btn_addUser.Visible = true;
+                chckbx_agrmnt.Visible = true;
+                btn_addUser.Enabled = true;
+                chckbx_agrmnt.Enabled = true;
+                cmbox_secQ.Enabled = true;
+                btn_reset.Visible = false;
+                btn_reset.Enabled = false;
+            }
+        }
         public bool IsResetUserButtonVisible
 
         {
             get { return btn_reset.Visible; }
             set
             {
-                btn_reset.Visible = value;
-                btn_reset.Enabled = value;
+                btn_reset.Visible = true;
+                btn_reset.Enabled = true;
+                btn_delUser.Visible = false;
+                btn_delUser.Enabled = false;
             }
         }
 

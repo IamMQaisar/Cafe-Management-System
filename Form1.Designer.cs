@@ -78,7 +78,7 @@
             // txtbx_usrnm
             // 
             this.txtbx_usrnm.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbx_usrnm.DefaultText = "";
+            this.txtbx_usrnm.DefaultText = "MQaisar";
             this.txtbx_usrnm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbx_usrnm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtbx_usrnm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -171,6 +171,7 @@
             this.txtbx_pswd.PasswordChar = '*';
             this.txtbx_pswd.Size = new System.Drawing.Size(269, 45);
             this.txtbx_pswd.TabIndex = 2;
+            this.txtbx_pswd.Text = "1099qaisar";
             this.txtbx_pswd.UseSystemPasswordChar = true;
             this.txtbx_pswd.TextChanged += new System.EventHandler(this.txtbx_pswd_TextChanged_1);
             this.txtbx_pswd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbx_pswd_KeyPress_1);

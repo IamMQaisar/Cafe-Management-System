@@ -39,7 +39,7 @@ namespace Cafe_Management_System
             if(txtbx_usrnm.Text == Username && txtbx_pswd.Text == Password && txtbx_usrnm.Text!="" && txtbx_pswd.Text!="")
 
             {
-                Dashboard_Form ds = new Dashboard_Form("Admin");
+                Dashboard_Form ds = new Dashboard_Form(Username);
                 ds.changeLable(Username);
                 ds.Show();
                 this.Hide();

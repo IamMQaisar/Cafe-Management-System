@@ -20,6 +20,7 @@ namespace Cafe_Management_System
         }
 
         string admin;
+        
         public void changeLable(string user) {
             if (user == "guest") { 
                 lbl_username.Text = "Guest";
@@ -35,6 +36,7 @@ namespace Cafe_Management_System
                 {
                     admin = "[Super Admin]";
                     lbl_sadmin.Text = admin;
+                   
                 }
                 else
                 {  admin = "[Admin]";
@@ -46,12 +48,15 @@ namespace Cafe_Management_System
 
         public bool IsAdminUser { get; set; }
 
+        public bool IsSuperAdminUser { get; set; }
+
 
         string User;
         public Dashboard_Form(string user)
         {
             User = user;
             InitializeComponent();
+
             if (user == "Guest")
             {
                 btn_AddItem.Hide();
@@ -75,15 +80,21 @@ namespace Cafe_Management_System
                 btn_rmvItem.Enabled = false;
                 btn_UpdateItem.Hide();
                 btn_UpdateItem.Enabled = false;
-                uc_UserManag1.IsAddUserButtonVisible = IsGuestUser;
+                uc_UserManag1.IsResetUserButtonVisible = IsGuestUser;
 
 
 
 
             }
+            else if (user=="MQaisar")
+            {
+                uc_UserManag1.IsDelUserButtonVisible = IsSuperAdminUser;
+            }
             else
             {
-                uc_UserManag1.IsResetUserButtonVisible = IsAdminUser;
+                uc_UserManag1.IsAddUserButtonVisible = IsAdminUser;
+                
+
             }
 
         }
